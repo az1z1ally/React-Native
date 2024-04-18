@@ -16,9 +16,9 @@ const FlatCards = () => {
         <View style={[styles.card, styles.cardThree]}>
           <Text>Blue</Text>
         </View>
-        <View style={[styles.card, styles.cardThree]}>
+        {/* <View style={[styles.card, styles.cardThree]}>
           <Text>Blue</Text>
-        </View>
+        </View> */}
       </View>
     </View>
   )
@@ -29,20 +29,22 @@ export default FlatCards
 const styles = StyleSheet.create({
   headingText: {
     fontSize: 24,
-    fontWeight: 'bold',
+    fontWeight: '500',
+    letterSpacing: 1.2,
     padding: 16
   },
 
   container: {
     flex: 1,
     flexDirection: 'row',
+    gap: 2,
     flexWrap: 'wrap',
-    justifyContent: 'space-between',
+    // justifyContent: 'space-between',
     padding: 8
   },
 
   card: {
-    flex: 1,
+    // flex: 1,
     width: 100,
     height: 100,
     borderRadius: 4,
