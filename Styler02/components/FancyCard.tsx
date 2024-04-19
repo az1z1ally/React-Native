@@ -17,9 +17,9 @@ export default function FancyCard() {
         <View style={styles.cardBody}>
             <Text style={styles.cardTitle}>The Mount Kilimanjaro</Text>
             <Text style={styles.cardSubtitle}>Kilimanjaro, Tanzania</Text>
-            <Text style={styles.cardDescription}>Exited to be at the highest point that you can reach in Africa?</Text>
+            <Text style={styles.cardDescription}>Exited to be at the highest point that you can reach in Africa&#63;</Text>
             <Text style={styles.cardDescription}>
-                Mount Kilimanjaro is a dormant volcano located in Kilimanjaro Region, Northen Highland of Tanzania. It has three volcanic cones: Kibo, Mawenzi, and Shira. It is the highest mountain in Africa and the highest single free-standing mountain above sea level in the world: 5,895 m (19,341 ft) above sea level and about 4,900 m (16,100 ft) above its plateau base. It is the highest volcano in Africa and the Eastern Hemisphere. 
+                Mount Kilimanjaro is a dormant volcano located in Kilimanjaro Region, Northen Highland of Tanzania. It has three volcanic cones: Kibo, Mawenzi, and Shira. It is the highest mountain in Africa and the highest single free-standing mountain above sea level in the world: 5,895 m &#40;19,341 ft&#41; above sea level and about 4,900 m 	&#40;16,100 ft&#41; above its plateau base. It is the highest volcano in Africa and the Eastern Hemisphere. 
             </Text>
             <Text style={styles.cardLabel}>5 mins away</Text>
         </View>
@@ -60,7 +60,7 @@ const styles = StyleSheet.create({
         // height: 360,
         padding: 8,
         borderRadius: 4,
-        margin: 8
+        margin: 12
     },
     cardElevated: {
         elevation: 3,
@@ -75,7 +75,8 @@ const styles = StyleSheet.create({
         objectFit: 'cover',
         height: 180,
         marginBottom: 8,
-        borderRadius: 4,
+        borderTopRightRadius: 4,
+        borderTopLeftRadius: 4,
     },
     cardBody: {
         flex: 1,
@@ -87,20 +88,21 @@ const styles = StyleSheet.create({
         fontSize: 20,
     },
     cardSubtitle: {
-        fontSize: 14,
+        fontSize: 14.5,
         fontStyle: 'italic',
         letterSpacing: .8,
         marginBottom: 8
     },
     cardDescription: {
-        fontSize: 14,
+        fontSize: 14.5,
+        fontWeight: '300',
         lineHeight: 24,
-        letterSpacing: 1,
+        letterSpacing: .975,
         color: '#ccc',
-        marginBottom: 4.8
+        marginBottom: 4.8,
     },
      cardLabel: {
-        fontSize: 12,
+        fontSize: 12.5,
         letterSpacing: .8
      }
 })
