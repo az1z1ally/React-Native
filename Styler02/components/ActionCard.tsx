@@ -18,7 +18,7 @@ export default function ActionCard() {
           source={{
             uri: 'https://media.licdn.com/dms/image/D4D2CAQHIoEoPFB94Vg/comment-image-shrink_8192_1280/0/1713468767074?e=1714129200&v=beta&t=WfFprOMO54bxFBnOq6xhPFqqZkM4ZXf4zRrH_PU1ksQ'
           }} 
-          alt= 'Linked post about reactnative'
+          alt='Linked post about reactnative'
           style={styles.cardImage}
         />
 
@@ -52,12 +52,11 @@ const styles = StyleSheet.create({
     fontSize: 24,
     fontWeight: '500',
     letterSpacing: 1.2,
-    paddingTop: 16,
-    paddingHorizontal: 16
+    paddingVertical: 16,
+    paddingHorizontal: 12
   },
 
   card: {
-    // padding: 8,
     borderRadius: 4,
     margin: 12
   },
@@ -110,16 +109,17 @@ const styles = StyleSheet.create({
     fontSize: 15,
     fontWeight: '500',
     letterSpacing: .95,
-    borderRadius: 4,
+    borderRadius: 6,
     paddingHorizontal: 12,
     paddingVertical: 10,
-    backgroundColor: '#218F76',
+    backgroundColor: '#218f76',
     elevation: 2,
     shadowOffset: {
       width: 1,
       height: 1
     },
-    shadowColor: '#333'
+    shadowColor: '#333',
+    shadowOpacity: 0.4
   },
 
   socialLink: {

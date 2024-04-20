@@ -31,7 +31,8 @@ const styles = StyleSheet.create({
     fontSize: 24,
     fontWeight: '500',
     letterSpacing: 1.2,
-    padding: 16
+    paddingVertical: 16,
+    paddingHorizontal: 12
   },
 
   container: {
@@ -40,7 +41,6 @@ const styles = StyleSheet.create({
     gap: 2,
     flexWrap: 'wrap',
     // justifyContent: 'space-between',
-    padding: 8
   },
 
   card: {

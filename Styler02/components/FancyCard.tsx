@@ -52,13 +52,13 @@ const styles = StyleSheet.create({
         fontSize: 24,
         fontWeight: '500',
         letterSpacing: 1.2,
-        padding: 16
+        paddingVertical: 16,
+        paddingHorizontal: 12
     },
     
     card: {
         // width: 350,
         // height: 360,
-        padding: 8,
         borderRadius: 4,
         margin: 12
     },

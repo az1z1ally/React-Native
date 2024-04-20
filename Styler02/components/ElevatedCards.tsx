@@ -34,11 +34,12 @@ const styles = StyleSheet.create({
         fontSize: 24,
         fontWeight: '500',
         letterSpacing: 1.2,
-        padding: 16
+        paddingVertical: 16,
+        paddingHorizontal: 12
     },
 
     container: {
-        padding: 8,
+        // padding: 8,
     },
     card: {
         flex:1, // divide the available space of the container for each card evenly.
