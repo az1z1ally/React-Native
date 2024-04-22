@@ -48,6 +48,10 @@ const App = () => {
               console.log(values);
               generatePassword(+values.passwordLength)
             }}
+            onReset={(values) => {
+              console.log(values);
+              resetPasswordState()
+            }}
           >
             {({
               values,
@@ -117,7 +121,15 @@ const App = () => {
                   >
                     <Text style={styles.primaryBtnTxt}>Generate Password</Text>
                   </TouchableOpacity>
-                  <TouchableOpacity style={[styles.btn, styles.secondaryBtn]}>
+                  <TouchableOpacity
+                    // onPress={() => { // Another way to call your own function onPress
+                    //   handleReset()
+                    //   resetPasswordState()
+                    //   // console.log(values);
+                    // }}
+                    onPress={handleReset}
+                    style={[styles.btn, styles.secondaryBtn]}
+                  >
                     <Text style={styles.secondaryBtnTxt}>Reset</Text>
                   </TouchableOpacity>
                 </View>
@@ -125,6 +137,14 @@ const App = () => {
             )}
           </Formik>
         </View>
+
+        {isPassGenerated ? (
+          <View style={[styles.card, styles.cardElevated]}>
+            <Text style={styles.subTitle}>Result:</Text>
+            <Text style={styles.description}>Long Press to copy</Text>
+            <Text selectable style={styles.generatedPassword}>{password}</Text>
+          </View>
+        ) : null}
       </ScrollView>
     </SafeAreaView>
   )
@@ -135,11 +155,15 @@ export default App
 const styles = StyleSheet.create({
   appContainer: {
     flex: 1,
+    padding: 2,
+    backgroundColor: '#444',
   },
   formContainer: {
     margin: 8,
-    padding: 8,
-    backgroundColor: '#333'
+    padding: 12,
+    backgroundColor: '#333',
+    borderRadius: 4,
+    elevation: 1
   },
   title: {
     fontSize: 32,
@@ -148,13 +172,21 @@ const styles = StyleSheet.create({
     marginBottom: 15,
   },
   subTitle: {
-    fontSize: 26,
+    fontSize: 24,
     fontWeight: '600',
+    letterSpacing: 1.25,
     marginBottom: 2,
   },
   description: {
     color: '#758283',
+    letterSpacing: .75,
     marginBottom: 8,
+  },
+  generatedPassword: {
+    fontSize: 22,
+    textAlign: 'center',
+    marginBottom: 12,
+    color:'#ccc'
   },
   heading: {
     fontSize: 15,
@@ -172,9 +204,9 @@ const styles = StyleSheet.create({
   inputStyle: {
     padding: 8,
     width: '30%',
-    borderWidth: 1,
+    borderWidth: 1.25,
     borderRadius: 4,
-    borderColor: '#16213e',
+    borderColor: '#555',
   },
   errorText: {
     fontSize: 12,
@@ -183,14 +215,23 @@ const styles = StyleSheet.create({
   formActions: {
     flexDirection: 'row',
     justifyContent: 'space-between',
+    paddingVertical: 16
   },
   btn: {
     // width: 120,
     width: '48%',
     padding: 10,
     borderRadius: 8,
-    marginHorizontal: 8,
-    justifyContent: 'center'
+    justifyContent: 'center',
+    elevation: 2,
+    shadowOffset: {
+      width: 1,
+      height: 1,
+    },
+    shadowColor: '#ccc',
+    shadowOpacity: 0.2,
+    shadowRadius: 2,
+    
   },
   primaryBtn: {
     backgroundColor: '#218f76',
@@ -198,8 +239,8 @@ const styles = StyleSheet.create({
   primaryBtnTxt: {
     color: '#fff',
     textAlign: 'center',
-    fontWeight: '500',
-    letterSpacing: .75
+    fontWeight: '700',
+    letterSpacing: .85
   },
   secondaryBtn: {
     backgroundColor: '#2f363f',
@@ -211,24 +252,18 @@ const styles = StyleSheet.create({
   },
   card: {
     padding: 12,
-    borderRadius: 6,
-    marginHorizontal: 12,
+    borderRadius: 4,
+    marginHorizontal: 8,
   },
   cardElevated: {
-    backgroundColor: '#ffffff',
+    backgroundColor: '#222',
     elevation: 1,
     shadowOffset: {
       width: 1,
       height: 1,
     },
-    shadowColor: '#333',
+    shadowColor: '#ccc',
     shadowOpacity: 0.2,
     shadowRadius: 2,
-  },
-  generatedPassword: {
-    fontSize: 22,
-    textAlign: 'center',
-    marginBottom: 12,
-    color:'#000'
-  },
+  }
 })
