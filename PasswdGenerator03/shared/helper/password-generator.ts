@@ -14,7 +14,7 @@ export const usePasswordGenerator = () => {
     const upperCaseChars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
     const lowerCaseChars = 'abcdefghijklmnopqrstuvwxyz';
     const digitChars = '0123456789';
-    const specialChars = '!@#$%^&*()_+';
+    const specialChars = '!@#$%^&*()_-=+';
 
     if (upperCase) {
       characters += upperCaseChars;
