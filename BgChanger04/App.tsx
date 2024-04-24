@@ -31,9 +31,7 @@ function App(): React.JSX.Element {
       <StatusBar backgroundColor={randomBackground} />
       <View style={[styles.container, {backgroundColor: randomBackground}]}>
         <TouchableOpacity
-          onPress={() => {
-            generateColor()
-          }}
+          onPress={generateColor}
         >
           <View style={styles.actionBtn}>
             <Text style={styles.actionBtnTxt}>Press Me</Text>
